@@ -28,6 +28,8 @@
         <spring.cloud.alibaba.version>2.1.0.RELEASE</spring.cloud.alibaba.version>
         <bizlog.version>1.0.8</bizlog.version>
         <mybatis-plus.spring.boot.version>3.4.3.4</mybatis-plus.spring.boot.version>
+        <checkstyle.plugin.version>3.1.2</checkstyle.plugin.version>
+        <checkstyleVersion>9.2.1</checkstyleVersion>
     </properties>
 
     <dependencyManagement>
@@ -111,6 +113,22 @@
     </dependencyManagement>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>${checkstyle.plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.puppycrawl.tools</groupId>
+                            <artifactId>checkstyle</artifactId>
+                            <version>${checkstyleVersion}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
