@@ -2,11 +2,13 @@ package com.ferry.demo.user;
 
 import com.mzt.logapi.starter.annotation.LogRecordAnnotation;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
 
@@ -17,7 +19,9 @@ public class UserServiceImpl implements UserService {
     @Transactional(rollbackFor = Exception.class)
     @Override
     public User createUser(User user) {
+        log.info("start create user");
         userMapper.insert(user);
+        log.info("end create user");
         return user;
     }
 }

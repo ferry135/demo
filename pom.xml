@@ -10,6 +10,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>operate-log</module>
+        <module>front</module>
+        <module>model</module>
     </modules>
 
     <properties>
@@ -30,6 +32,7 @@
         <mybatis-plus.spring.boot.version>3.4.3.4</mybatis-plus.spring.boot.version>
         <checkstyle.plugin.version>3.1.2</checkstyle.plugin.version>
         <checkstyleVersion>9.2.1</checkstyleVersion>
+        <logback.version>1.2.9</logback.version>
     </properties>
 
     <dependencyManagement>
@@ -108,6 +111,16 @@
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis-plus.spring.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${logback.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

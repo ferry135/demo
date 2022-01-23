@@ -1,7 +1,6 @@
 package com.ferry.demo.log;
 
 import lombok.Data;
-import lombok.ToString;
 
 import java.util.Date;
 

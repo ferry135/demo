@@ -12,3 +12,5 @@ logging:
   level:
     org:
       h2: debug
+server:
+  port: 9090
